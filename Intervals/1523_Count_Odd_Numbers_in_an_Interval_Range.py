@@ -1,0 +1,47 @@
+# -*- coding: utf-8 -*-
+"""
+Created on Sat Dec 19 15:50:19 2020
+
+@author: PRANIKP
+
+Given two non-negative integers low and high. Return the count of odd numbers between low and high (inclusive).
+
+ 
+
+Example 1:
+
+Input: low = 3, high = 7
+Output: 3
+Explanation: The odd numbers between 3 and 7 are [3,5,7].
+Example 2:
+
+Input: low = 8, high = 10
+Output: 1
+Explanation: The odd numbers between 8 and 10 are [9].
+ 
+
+Constraints:
+
+0 <= low <= high <= 10^9
+
+Time Complexity: O(1)
+Space Complexity: O(1)
+"""
+
+class Solution(object):
+    def countOdds(self, low, high):
+        """
+        :type low: int
+        :type high: int
+        :rtype: int
+        """
+        count = 0
+        
+        if low %2 != 0 and high %2 != 0:
+            count = (high - low)/2 + 1
+        elif low %2 == 0 and high % 2 == 0:
+            count = (high - low)/2
+        else:
+            count = ((high - low) - 1)/2 + 1
+            
+        return count
